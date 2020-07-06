@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-2" style="background: aqua; ">
+            <div class="container-fluid add-site align-middle">
+                Add-site
+            </div>
+        </div>
+        <div class="col-md-2" style="background: coral">
+            {% for piece in news %}
+
+                <div class="container-sm container-fluid news-feed align-middle flex-sm">
+                    <h3> {{ piece.title }}</h3> <br>
+                    <img src="{{ piece.photo }}" alt="">
+                    <em>{{ piece.content }} </em>
+                </div>
+            {% endfor %}
+
+
+        </div>
+        <div class="col-md-6">
+            <div class="container-fluid content align-middle">
+                Hi , content
+            </div>
+        </div>
+
+        <div class="col-md-2" style="background: coral">
+            <div class="container-sm container-fluid news-feed align-middle flex-sm">
+                {% for piece in news %}
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{ piece.photo }}" alt="piece.title">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ piece.title }}</h5>
+                            <p class="card-text"> {{ piece.content }} </p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
