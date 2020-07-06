@@ -1,0 +1,6 @@
+sqlite3
+from datetime import datetime
+requests
+bs4
+flask_sqlalchemy
+flask
