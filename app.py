@@ -1,7 +1,11 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from admin import admin
 
 app = Flask(__name__)
+app.register_blueprint(admin, url_prefix='/admin')
+
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///news_db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -55,12 +59,12 @@ def home():
 
 
 # Error Handling
-# @app.errorhandler(404)
-# def page_not_found(e):
-#     return render_template('404.html', e=e), 404
-#
-#
-# app.register_error_handler(404, page_not_found)
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html', e=e)
+
+
+app.register_error_handler(404, page_not_found)
 
 if __name__ == '__main__':
     app.run(debug=True)

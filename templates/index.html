@@ -2,18 +2,19 @@
 
 {% block content %}
     <div class="row">
-        <div class="col-md-2" style="background: aqua; ">
+        <div class="col-md-2" style="background: #067878; ">
             <div class="container-fluid add-site align-middle">
                 Add-site
             </div>
         </div>
-        <div class="col-md-2" style="background: coral">
+        <div class="col-md-2" style="background: #b6e5e1">
             {% for piece in news %}
 
                 <div class="container-sm container-fluid news-feed align-middle flex-sm">
                     <h3> {{ piece.title }}</h3> <br>
                     <img src="{{ piece.photo }}" alt="">
                     <em>{{ piece.content }} </em>
+                    <br><br><br>
                 </div>
             {% endfor %}
 
@@ -22,14 +23,100 @@
         <div class="col-md-6">
             <div class="container-fluid content align-middle">
                 Hi , content
+                {##}
+                <div class="container">
+                    <div class="row my-4">
+                        <div class="col">
+                            <div class="jumbotron">
+                                <h1>Bootstrap 4 Cards all same height demo</h1>
+                                <p class="lead">by djibe.</p>
+                                <span class="text-muted">(thx to BS4)</span>
+                                <p>Dependencies : standard BS4</p>
+                                <p>
+                                    Enjoy the magic of flexboxes and leave the useless card-decks.
+                                </p>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-sm d-flex">
+                                            <div class="card card-body flex-fill">
+                                                A small card content.
+                                            </div>
+                                        </div>
+                                        <div class="col-sm d-flex">
+                                            <div class="card card-body flex-fill">
+                                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                                commodo consequat. Duis aute irure dolor
+                                                in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                                                qui officia deserunt mollit anim id est laborum."
+                                            </div>
+                                        </div>
+                                        <div class="col-sm d-flex">
+                                            <div class="card card-body flex-fill">
+                                                Another small card content.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        {#    #}
+        <br><br><br>
+        <div class="row my-flex-card">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="card-block">
+                        aaaa
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="card-block">
+                        bbbb
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="card-block">
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor
+                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                        qui officia deserunt mollit anim id est laborum."
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                    <div class="card-block">
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat. Duis aute irure dolor
+                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                        qui officia deserunt mollit anim id est laborum."
+                    </div>
+                </div>
+            </div>
+        </div>
+        {# #}
 
-        <div class="col-md-2" style="background: coral">
-            <div class="container-sm container-fluid news-feed align-middle flex-sm">
+
+            <div class="container-sm container-fluid news-feed align-middle flex-sm h-100">
                 {% for piece in news %}
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{ piece.photo }}" alt="piece.title">
+                        <img class="card-img-top" src="{{ piece.photo }}" alt="{{ piece.title }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ piece.title }}</h5>
                             <p class="card-text"> {{ piece.content }} </p>

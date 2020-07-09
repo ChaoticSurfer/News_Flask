@@ -1,7 +1,20 @@
-@media only screen and (min-width: 800px) {
+/*@media only screen and (min-width: 800px) {*/
 
-    .content, .news-feed, .add-site{
-        /*margin: 0px 20px 10px 20px; !important;*/
-        margin: auto;
-    }
-}
+/*    .content, .news-feed, .add-site {*/
+/*        !*margin: 0px 20px 10px 20px; !important;*!*/
+/*        margin: auto;*/
+/*        max-height: 40%;*/
+/*    }*/
+/*}*/
+
+
+/*.card {*/
+/*    max-height: 60px;*/
+/*}*/
+
+
+/*@media only screen and (max-width: 800px) {*/
+/*    .card {*/
+/*        max-height: 89%;*/
+/*    }*/
+/*}*/
