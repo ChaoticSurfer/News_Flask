@@ -42,6 +42,7 @@ def contact():
 
 
 @app.route('/', methods=['GET', 'POST'])
+#@cross_origin()
 def home():
     if request.method == 'POST':
         seearch_words = request.form.get('search')
@@ -55,6 +56,8 @@ def home():
     else:
         all_pieces = news_piece.query.order_by(news_piece.date_time).all()
         return render_template('index.html', news=all_pieces)
+      
+#   needs flask-cors  ...response....headers.add("Access-Control-Allow-Origin", "*") or upp^
 
 
 
