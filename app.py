@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from admin import admin
+from flask_cors import CORS
+
 
 app = Flask(__name__)
 app.register_blueprint(admin, url_prefix='/admin')
@@ -8,6 +10,8 @@ app.register_blueprint(admin, url_prefix='/admin')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///news_db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+CORS(app)
 
 db = SQLAlchemy(app)
 
@@ -42,7 +46,6 @@ def contact():
 
 
 @app.route('/', methods=['GET', 'POST'])
-#@cross_origin()
 def home():
     if request.method == 'POST':
         seearch_words = request.form.get('search')
@@ -56,6 +59,7 @@ def home():
     else:
         all_pieces = news_piece.query.order_by(news_piece.date_time).all()
         return render_template('index.html', news=all_pieces)
+
       
 #   needs flask-cors  ...response....headers.add("Access-Control-Allow-Origin", "*") or upp^
 
